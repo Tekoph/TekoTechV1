@@ -1,0 +1,9 @@
+ext {
+    stagingApi = [
+            'BASE_URL': 'https://google-staging.com',
+    ]
+
+    releaseApi = [
+            'BASE_URL': 'https://google.com',
+    ]
+}

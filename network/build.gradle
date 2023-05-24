@@ -3,6 +3,7 @@ apply plugin: 'kotlin-android'
 apply plugin: 'kotlin-parcelize'
 apply plugin: 'kotlin-kapt'
 apply from: '../ktlint.gradle'
+apply from: '../config.gradle'
 
 android {
     namespace 'com.teko.tekotechv1'
@@ -20,8 +21,22 @@ android {
         release {
             minifyEnabled false
             proguardFiles getDefaultProguardFile('proguard-android-optimize.txt'), 'proguard-rules.pro'
+            releaseApi.each { key, value ->
+                buildConfigField 'String', key, "\"" + value + "\""
+            }
+        }
+        debug {
+            debuggable true
+            stagingApi.each { key, value ->
+                buildConfigField 'String', key, "\"" + value + "\""
+            }
         }
     }
+
+    kotlinOptions {
+        jvmTarget = JavaVersion.VERSION_1_8.toString()
+    }
+
     compileOptions {
         sourceCompatibility JavaVersion.VERSION_1_8
         targetCompatibility JavaVersion.VERSION_1_8
@@ -34,4 +49,15 @@ dependencies {
     implementation fileTree(dir: 'libs', include: ['*.jar'])
 
     implementation project(':common')
+
+    api Libs.retrofit
+    api Libs.retrofitRxJava2
+    api Libs.retrofitGson
+    api Libs.retrofitScalar
+
+    api Libs.okhttp
+    api Libs.okhttpLogging
+
+    debugImplementation Libs.chuckerDebug
+    releaseImplementation Libs.chuckerRelease
 }

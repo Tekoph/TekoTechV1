@@ -7,4 +7,22 @@ object Libs {
     const val coordinatorLayout = "androidx.coordinatorlayout:coordinatorlayout:${Versions.coordinatorLayoutVersion}"
     const val activityKtx = "androidx.activity:activity-ktx:${Versions.activityVersion}"
     const val fragmentKtx = "androidx.fragment:fragment-ktx:${Versions.fragmentVersion}"
+
+    // Dagger Hilt
+    const val hilt = "com.google.dagger:hilt-android:${Versions.hiltVersion}"
+    const val hiltCompiler = "com.google.dagger:hilt-compiler:${Versions.hiltVersion}"
+
+    // Retrofit
+    const val retrofit = "com.squareup.retrofit2:retrofit:${Versions.retrofitVersion}"
+    const val retrofitRxJava2 = "com.squareup.retrofit2:adapter-rxjava2:${Versions.retrofitVersion}"
+    const val retrofitGson = "com.squareup.retrofit2:converter-gson:${Versions.retrofitVersion}"
+    const val retrofitScalar = "com.squareup.retrofit2:converter-scalars:${Versions.retrofitScalarVersion}"
+
+    // OkHttp
+    const val okhttp = "com.squareup.okhttp3:okhttp:${Versions.okhttpVersion}"
+    const val okhttpLogging = "com.squareup.okhttp3:logging-interceptor:${Versions.okhttpLoggingVersion}"
+
+    // Chucker
+    const val chuckerDebug = "com.github.chuckerteam.chucker:library:${Versions.chucker}"
+    const val chuckerRelease = "com.github.chuckerteam.chucker:library-no-op:${Versions.chucker}"
 }

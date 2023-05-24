@@ -38,4 +38,7 @@ dependencies {
     api Libs.supportDesign
     api Libs.coordinatorLayout
     api Libs.recyclerView
+
+    api Libs.hilt
+    kapt Libs.hiltCompiler
 }

@@ -18,5 +18,15 @@ object Versions {
     const val activityVersion = "1.2.0-beta01"
     const val fragmentVersion = "1.3.0-beta01"
     const val firebaseBoMVersion = "28.1.0"
+
+    const val hiltVersion = "2.42"
+
+    const val retrofitVersion = "2.9.0"
+    const val retrofitScalarVersion = "2.9.0"
+
+    const val okhttpVersion = "4.9.1"
+    const val okhttpLoggingVersion = okhttpVersion
+
+    const val chucker = "3.5.2"
     // endregion
 }
