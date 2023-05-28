@@ -29,4 +29,20 @@ object Versions {
 
     const val chucker = "3.5.2"
     // endregion
+
+    // region Test
+    // Test dependency versions
+    const val androidXJunitVersion = "1.1.2"
+    const val espressoVersion = "3.3.0"
+    const val gsonVersion = "2.8.5"
+    const val junitVersion = "4.13.2"
+    const val mockitoVersion = "3.11.0"
+    const val testRunnerVersion = "1.3.0"
+    const val testRulesVersion = "1.3.0"
+    const val archCompTestVersion = "2.1.0"
+    const val coroutineTest = "1.6.4"
+    const val okHttpMockVersion = "4.6.0"
+    const val nhaarmanVersion = "2.2.0"
+    const val mockKVersion = "1.13.5"
+    // endregion
 }

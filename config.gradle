@@ -1,6 +1,6 @@
 ext {
     stagingApi = [
-            'BASE_URL': 'https://google-staging.com',
+            'BASE_URL': 'https://staging-api.teko.ph',
     ]
 
     releaseApi = [

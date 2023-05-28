@@ -1,5 +1,6 @@
-package com.teko.network
+package com.teko.network.di
 
+import com.teko.network.TekoTechApiServices
 import dagger.Module
 import dagger.Provides
 import dagger.hilt.InstallIn
@@ -13,6 +14,5 @@ object ApiServicesModule {
 
     @Provides
     @Singleton
-    fun providesTekoTechApiServices(retrofit: Retrofit): TekoTechApiServices =
-        retrofit.create(TekoTechApiServices::class.java)
+    fun providesTekoTechApiServices(retrofit: Retrofit): TekoTechApiServices = retrofit.create(TekoTechApiServices::class.java)
 }

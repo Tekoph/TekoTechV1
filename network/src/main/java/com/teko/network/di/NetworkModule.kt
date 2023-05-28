@@ -4,9 +4,7 @@ import android.content.Context
 import com.chuckerteam.chucker.api.ChuckerInterceptor
 import com.google.gson.Gson
 import com.google.gson.GsonBuilder
-import com.teko.network.API
 import com.teko.network.ENDPOINT_FORMAT
-import com.teko.network.VERSION
 import com.teko.tekotechv1.BuildConfig
 import dagger.Module
 import dagger.Provides
@@ -75,7 +73,7 @@ object NetworkModule {
     @Singleton
     fun providesRetrofit(okHttpClient: OkHttpClient, gson: Gson): Retrofit {
         return Retrofit.Builder()
-            .baseUrl(String.format(ENDPOINT_FORMAT, BuildConfig.BASE_URL, API, VERSION))
+            .baseUrl(String.format(ENDPOINT_FORMAT, BuildConfig.BASE_URL))
             .addConverterFactory(ScalarsConverterFactory.create())
             .addConverterFactory(GsonConverterFactory.create(gson))
             .addCallAdapterFactory(RxJava2CallAdapterFactory.create())
