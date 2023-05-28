@@ -32,5 +32,14 @@ check.dependsOn(ktlint)
 
 dependencies {
     implementation fileTree(dir: 'libs', include: ['*.jar'])
+    implementation project(':network')
+    implementation project(':local')
+    implementation project(':domain')
     implementation project(':common')
+
+    implementation Libs.hilt
+    kapt Libs.hiltCompiler
+
+    testImplementation TestLibs.junit
+    testImplementation TestLibs.mockK
 }

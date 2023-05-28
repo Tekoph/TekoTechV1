@@ -63,10 +63,6 @@ dependencies {
     releaseImplementation Libs.chuckerRelease
 
     testImplementation TestLibs.junit
-    //testImplementation TestLibs.mockito
-    //testImplementation TestLibs.coroutineTest
-    //testImplementation TestLibs.okHttpMock
-    //testImplementation TestLibs.nhaarmanMockito
     testImplementation TestLibs.mockK
     androidTestImplementation TestLibs.testRunner
     androidTestImplementation TestLibs.espresso
