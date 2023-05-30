@@ -8,8 +8,6 @@ import androidx.security.crypto.MasterKeys
 import com.teko.tekotechv1.BuildConfig
 import dagger.Module
 import dagger.Provides
-import dagger.hilt.InstallIn
-import dagger.hilt.components.SingletonComponent
 import javax.inject.Singleton
 
 @Module

@@ -1,7 +1,7 @@
 package com.teko.local.di
 
 import com.teko.local.AppDatabase
-import com.teko.local.DatabaseHelper
+import com.teko.local.utils.DatabaseHelper
 import dagger.Module
 import dagger.Provides
 import dagger.hilt.InstallIn

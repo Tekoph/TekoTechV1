@@ -40,4 +40,7 @@ object Libs {
 
     // PreferenceManager
     val preference = "androidx.preference:preference-ktx:${Versions.preferenceManagerVersion}"
+
+    // Gson
+    const val gson = "com.google.code.gson:gson:${Versions.gsonVersion}"
 }

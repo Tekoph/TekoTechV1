@@ -33,4 +33,6 @@ check.dependsOn(ktlint)
 dependencies {
     implementation fileTree(dir: 'libs', include: ['*.jar'])
     implementation project(':common')
+
+    api Libs.gson
 }

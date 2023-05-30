@@ -34,7 +34,7 @@ dependencies {
     implementation fileTree(dir: 'libs', include: ['*.jar'])
 
     implementation project(':common')
-    implementation project(":domain")
+    implementation project(':domain')
 
     implementation Libs.room
     implementation Libs.roomRx
@@ -46,4 +46,7 @@ dependencies {
     implementation Libs.sqlite
 
     implementation Libs.securityCrypto
+
+    testImplementation TestLibs.junit
+    testImplementation TestLibs.mockK
 }
