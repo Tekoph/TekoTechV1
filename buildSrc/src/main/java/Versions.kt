@@ -28,6 +28,13 @@ object Versions {
     const val okhttpLoggingVersion = okhttpVersion
 
     const val chucker = "3.5.2"
+
+    const val roomVersion = "2.4.0"
+
+    const val sqlChipherVersion = "4.4.3"
+    const val sqliteVersion = "2.1.0"
+
+    const val securityCryptoVersion = "1.0.0"
     // endregion
 
     // region Test

@@ -25,4 +25,19 @@ object Libs {
     // Chucker
     const val chuckerDebug = "com.github.chuckerteam.chucker:library:${Versions.chucker}"
     const val chuckerRelease = "com.github.chuckerteam.chucker:library-no-op:${Versions.chucker}"
+
+    // Room
+    const val room = "androidx.room:room-runtime:${Versions.roomVersion}"
+    const val roomRx = "androidx.room:room-rxjava2:${Versions.roomVersion}"
+    const val roomCompiler = "androidx.room:room-compiler:${Versions.roomVersion}"
+
+    // SQLCipher
+    const val sqlcipher = "net.zetetic:android-database-sqlcipher:${Versions.sqlChipherVersion}"
+    const val sqlite = "androidx.sqlite:sqlite:${Versions.sqliteVersion}"
+
+    // Security Crypto
+    const val securityCrypto = "androidx.security:security-crypto:${Versions.securityCryptoVersion}"
+
+    // PreferenceManager
+    val preference = "androidx.preference:preference-ktx:${Versions.preferenceManagerVersion}"
 }

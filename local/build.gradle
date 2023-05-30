@@ -35,4 +35,15 @@ dependencies {
 
     implementation project(':common')
     implementation project(":domain")
+
+    implementation Libs.room
+    implementation Libs.roomRx
+    kapt Libs.roomCompiler
+
+    implementation Libs.preference
+
+    implementation Libs.sqlcipher
+    implementation Libs.sqlite
+
+    implementation Libs.securityCrypto
 }
