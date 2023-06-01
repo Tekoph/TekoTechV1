@@ -5,13 +5,21 @@ import android.content.Context
 import android.content.SharedPreferences
 import androidx.security.crypto.EncryptedSharedPreferences
 import androidx.security.crypto.MasterKeys
+import com.teko.local.AppDatabase
+import com.teko.local.features.token.AccessTokenLocalSource
+import com.teko.local.features.token.AccessTokenLocalSourceImpl
+import com.teko.local.features.user.UserLocalSource
+import com.teko.local.features.user.UserLocalSourceImpl
 import com.teko.tekotechv1.BuildConfig
+import dagger.Binds
 import dagger.Module
 import dagger.Provides
+import dagger.hilt.InstallIn
 import javax.inject.Singleton
 
 @Module
-class LocalModule {
+@InstallIn
+interface LocalModule {
 
     @Provides
     @Singleton
@@ -36,5 +44,22 @@ class LocalModule {
 
     private fun getDefaultPreferencesName(application: Application): String {
         return application.packageName + "_prefs"
+    }
+
+    @Binds
+    @Singleton
+    fun providesUserLocalSource(
+        appDatabase: AppDatabase
+    ): UserLocalSource {
+        return UserLocalSourceImpl(appDatabase.userDao())
+    }
+
+    @Binds
+    @Singleton
+    fun providesAccessTokenLocalSource(
+        sharedPreferences: SharedPreferences,
+        appDatabase: AppDatabase
+    ): AccessTokenLocalSource {
+        return AccessTokenLocalSourceImpl(sharedPreferences, appDatabase.tokenDao())
     }
 }

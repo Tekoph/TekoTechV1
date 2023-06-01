@@ -3,6 +3,7 @@ package com.teko.local
 import androidx.room.Database
 import androidx.room.RoomDatabase
 import androidx.room.TypeConverters
+import com.teko.local.features.token.dao.TokenDao
 import com.teko.local.features.user.dao.UserDao
 import com.teko.local.features.user.model.UserDB
 import com.teko.local.features.user.model.UserDBConverters
@@ -21,6 +22,8 @@ import com.teko.local.utils.DatabaseHelper
 abstract class AppDatabase : RoomDatabase() {
 
     abstract fun userDao(): UserDao
+
+    abstract fun tokenDao(): TokenDao
 
     companion object {
 
