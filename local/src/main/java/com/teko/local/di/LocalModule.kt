@@ -6,6 +6,8 @@ import android.content.SharedPreferences
 import androidx.security.crypto.EncryptedSharedPreferences
 import androidx.security.crypto.MasterKeys
 import com.teko.local.AppDatabase
+import com.teko.local.features.session.SessionLocalSource
+import com.teko.local.features.session.SessionLocalSourceImpl
 import com.teko.local.features.token.AccessTokenLocalSource
 import com.teko.local.features.token.AccessTokenLocalSourceImpl
 import com.teko.local.features.user.UserLocalSource
@@ -61,5 +63,15 @@ interface LocalModule {
         appDatabase: AppDatabase
     ): AccessTokenLocalSource {
         return AccessTokenLocalSourceImpl(sharedPreferences, appDatabase.tokenDao())
+    }
+
+    @Binds
+    @Singleton
+    fun providesSessionLocalSource(
+        userLocalSource: UserLocalSource,
+        accessTokenLocalSource: AccessTokenLocalSource,
+        sharedPreferences: SharedPreferences
+    ): SessionLocalSource {
+        return SessionLocalSourceImpl(userLocalSource, accessTokenLocalSource, sharedPreferences)
     }
 }

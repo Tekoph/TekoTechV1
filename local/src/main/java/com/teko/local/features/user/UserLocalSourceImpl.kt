@@ -5,6 +5,7 @@ import com.teko.domain.User
 import com.teko.local.features.user.dao.UserDao
 import com.teko.local.features.user.model.UserDB
 import com.teko.local.utils.OnErrorResumeNext
+import io.reactivex.Completable
 import io.reactivex.Single
 import javax.inject.Inject
 
@@ -33,5 +34,9 @@ class UserLocalSourceImpl @Inject constructor(
             .map {
                 UserDB.toDomain(it)
             }
+    }
+
+    override fun deleteUser(): Completable {
+        return userDao.deleteUsers()
     }
 }
