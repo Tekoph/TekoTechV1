@@ -7,7 +7,7 @@ import com.teko.domain.AccessToken
 @Entity(tableName = AccessTokenDB.TOKEN_TABLE_NAME)
 data class AccessTokenDB(
     @PrimaryKey
-    var authCookie: String = "",
+    var authCookie: String = ""
 ) {
     companion object {
         const val TOKEN_TABLE_NAME = "token"

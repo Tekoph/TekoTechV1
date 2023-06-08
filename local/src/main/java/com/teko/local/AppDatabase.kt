@@ -4,6 +4,7 @@ import androidx.room.Database
 import androidx.room.RoomDatabase
 import androidx.room.TypeConverters
 import com.teko.local.features.token.dao.TokenDao
+import com.teko.local.features.token.models.AccessTokenDB
 import com.teko.local.features.user.dao.UserDao
 import com.teko.local.features.user.model.UserDB
 import com.teko.local.features.user.model.UserDBConverters
@@ -11,7 +12,8 @@ import com.teko.local.utils.DatabaseHelper
 
 @Database(
     entities = [
-        UserDB::class
+        UserDB::class,
+        AccessTokenDB::class
     ],
     version = 1,
     exportSchema = true

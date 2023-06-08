@@ -1,10 +1,10 @@
 package com.teko.local.base
 
+import androidx.room.Delete
 import androidx.room.Insert
 import androidx.room.OnConflictStrategy
 import androidx.room.Transaction
 import androidx.room.Update
-import androidx.room.Delete
 
 interface BaseDao<T> {
 

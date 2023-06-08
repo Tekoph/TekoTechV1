@@ -13,10 +13,10 @@ import javax.inject.Inject
 class AccessTokenLocalSourceImpl @Inject constructor(
     private val sharedPreferences: SharedPreferences,
     private val tokenDao: TokenDao
-): AccessTokenLocalSource {
+) : AccessTokenLocalSource {
 
     companion object {
-        private const val PREF_USER_TOKEN = "PREF_USER_TOKEN"
+        const val PREF_USER_TOKEN = "PREF_USER_TOKEN"
     }
 
     override fun getAccessToken(): Single<AccessToken> {
