@@ -1,33 +1,40 @@
-package com.teko.data
+package com.teko.data.features.auth
 
-import com.teko.data.features.auth.AuthRepositoryImpl
 import com.teko.domain.AccessToken
 import com.teko.domain.User
+import com.teko.network.features.auth.AuthRemoteSource
 import io.mockk.every
 import io.mockk.mockk
 import io.mockk.verify
 import io.reactivex.Single
 import junit.framework.Assert
+import org.junit.Before
 import org.junit.Test
 
 class AuthRepositoryImplTest {
 
-    private val systemUnderTest: AuthRepositoryImpl = mockk()
+    private lateinit var sut: AuthRepository
+    private val mockAuthRemoteSource = mockk<AuthRemoteSource>(relaxed = true, relaxUnitFun = true)
+
+    @Before
+    fun setup() {
+        sut = AuthRepositoryImpl(mockAuthRemoteSource)
+    }
 
     @Test
     fun login_ShouldCallFromRemoteSource() {
         val response = mockk<Pair<User, AccessToken>>(relaxed = true)
         every {
-            systemUnderTest
+            sut
                 .login(any(), any(), any())
         } returns Single.just(response)
 
-        systemUnderTest
+        sut
             .login("email", "pass", false)
 
-        verify(exactly = 1) {
-            systemUnderTest
-                .login(any(), any(), any())
+        verify {
+           mockAuthRemoteSource
+               .login(any(), any(), any())
         }
     }
 
@@ -36,11 +43,11 @@ class AuthRepositoryImplTest {
 
         val response = mockk<Pair<User, AccessToken>>(relaxed = true)
         every {
-            systemUnderTest
+            sut
                 .login(any(), any(), any())
         } returns Single.just(response)
 
-        val result = systemUnderTest
+        val result = sut
             .login("email", "pass", false)
             .blockingGet()
 
