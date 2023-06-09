@@ -15,6 +15,7 @@ class AuthRepositoryImpl @Inject constructor(
         password: String,
         isSpecial: Boolean
     ): Single<Pair<User, AccessToken>> {
+        // TODO usage of local
         return authRemoteSource.login(email, password, isSpecial)
     }
 }

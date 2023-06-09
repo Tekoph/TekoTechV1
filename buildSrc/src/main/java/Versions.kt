@@ -19,22 +19,34 @@ object Versions {
     const val fragmentVersion = "1.3.0-beta01"
     const val firebaseBoMVersion = "28.1.0"
 
+    // Hilt
     const val hiltVersion = "2.42"
 
+    // Retrofit
     const val retrofitVersion = "2.9.0"
     const val retrofitScalarVersion = "2.9.0"
 
+    // OkHttp
     const val okhttpVersion = "4.9.1"
     const val okhttpLoggingVersion = okhttpVersion
 
+    // Chucker
     const val chucker = "3.5.2"
 
+    // Room
     const val roomVersion = "2.4.0"
 
+    // SQL Cipher
     const val sqlChipherVersion = "4.4.3"
     const val sqliteVersion = "2.1.0"
 
+    // Security Crypto
     const val securityCryptoVersion = "1.0.0"
+
+    // RxJava
+    const val rxJava2Version = "2.2.21"
+    const val rxKotlinVersion = "2.4.0"
+    const val rxAndroidVersion = "2.1.1"
     // endregion
 
     // region Test

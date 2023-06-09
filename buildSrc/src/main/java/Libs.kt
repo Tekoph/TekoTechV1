@@ -43,4 +43,9 @@ object Libs {
 
     // Gson
     const val gson = "com.google.code.gson:gson:${Versions.gsonVersion}"
+
+    // RxJava
+    const val rxjava2 = "io.reactivex.rxjava2:rxjava:${Versions.rxJava2Version}"
+    const val rxkotlin = "io.reactivex.rxjava2:rxkotlin:${Versions.rxKotlinVersion}"
+    const val rxandroid = "io.reactivex.rxjava2:rxandroid:${Versions.rxAndroidVersion}"
 }

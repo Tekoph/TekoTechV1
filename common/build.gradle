@@ -39,6 +39,14 @@ dependencies {
     api Libs.coordinatorLayout
     api Libs.recyclerView
 
+    api Libs.rxjava2
+    api Libs.rxkotlin
+    api Libs.rxandroid
+
     api Libs.hilt
     kapt Libs.hiltCompiler
+
+    testImplementation(TestLibs.mockK) {
+        exclude group: 'org.slf4j', module: 'slf4j-reload4j'
+    }
 }

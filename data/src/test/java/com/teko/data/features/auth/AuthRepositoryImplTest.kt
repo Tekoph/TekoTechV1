@@ -33,8 +33,8 @@ class AuthRepositoryImplTest {
             .login("email", "pass", false)
 
         verify {
-           mockAuthRemoteSource
-               .login(any(), any(), any())
+            mockAuthRemoteSource
+                .login(any(), any(), any())
         }
     }
 

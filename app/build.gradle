@@ -39,4 +39,13 @@ check.dependsOn(ktlint)
 dependencies {
 
     implementation project(':common')
+    implementation project(':domain')
+    implementation project(':data')
+
+    testImplementation TestLibs.junit
+    testImplementation TestLibs.archCoreTesting
+    testImplementation TestLibs.coroutineTest
+    testImplementation(TestLibs.mockK) {
+        exclude group: 'org.slf4j', module: 'slf4j-reload4j'
+    }
 }
